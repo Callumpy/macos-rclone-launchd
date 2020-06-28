@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>KeepAlive</key>
+			<true/>
+		<key>Label</key>
+			<string>RClone-Mount</string>
+		<key>ProgramArguments</key>
+			<array>
+				<string>/usr/local/bin/rclone</string>
+				<string>mount</string>
+				<string>--allow-other</string>
+				<string>--allow-non-empty</string>
+				<string>--config=/Users/<USER>/.config/rclone/rclone.conf</string>
+				<string>--cache-tmp-upload-path=/tmp/rclone/upload</string>
+				<string>--cache-chunk-path=/tmp/rclone/chunks</string>
+				<string>--cache-workers=8</string>
+				<string>--cache-writes</string>
+				<string>--cache-dir=/tmp/rclone/vfs</string>
+				<string>--cache-db-path=/tmp/rclone/db</string>
+				<string>--no-modtime</string>
+				<string>--drive-use-trash</string>
+				<string>--stats=0</string>
+				<string>--checkers=16</string>
+				<string>--bwlimit=40M</string>
+				<string>--dir-cache-time=60m</string>
+				<string>--cache-info-age=60m</string>
+				<string>gdrive:</string>
+				<string>/Users/<USER>/Encrypted</string>	
+			</array>
+		<key>RunAtLoad</key>
+			<true/>
+		<key>StandardErrorPath</key>
+			<string>/Users/<USER>/Documents/logs/rclone-mount.log</string>
+		<key>StandardOutPath</key>
+			<string>/Users/<USER>/Documents/logs/stdout</string>
+	</dict>
+</plist>
